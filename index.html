@@ -20,16 +20,21 @@
             },
             methods: {
                 sayHi(){
-                    alert("Hi!");
-                    axios.post('http://10.3.6.40:8080/ixrtb', {
-                        l: 'cooking',
-                        d: 'movies',
-                        a: 2,
-                        s: 'tall',
-                    }).then(response => {
-                        alert("Success!");
+                    // axios.post('http://10.3.6.40:8080/ixrtb', {
+                    //     l: 'cooking',
+                    //     d: 'movies',
+                    //     a: 2,
+                    //     s: 'tall',
+                    // }).then(response => {
+                    //     alert("Success!");
+                    // }).catch(function (error) {
+                    //     alert("Test unsuccessful, error message: " + error);
+                    // });
+                    //
+                    axios.get('https://jsonplaceholder.typicode.com/todos/1').then(response => {
+                        alert("Success")
                     }).catch(function (error) {
-                        alert("Test unsuccessful, error message: " + error);
+                        alert("Request failed, error message: " + error)
                     });
                 },
             }
