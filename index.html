@@ -11,6 +11,7 @@
 
     <!-- Install Axios for HTTP requests -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
     <script>
         new Vue({
             el: '#example',
@@ -20,6 +21,16 @@
             methods: {
                 sayHi(){
                     alert("Hi!");
+                    axios.post('http://10.3.6.40:8080/ixrtb', {
+                        l: 'cooking',
+                        d: 'movies',
+                        a: 2,
+                        s: 'tall',
+                    }).then(response => {
+                        alert("Success!");
+                    }).catch(function (error) {
+                        alert("Test unsuccessful, error message: " + error);
+                    });
                 },
             }
         })
