@@ -3,12 +3,25 @@
   <body>
     <div id="example">
       <p class="title">{{ hello }}</p>
+      <div v-on:click="sayHi()">Say Hi!</div>
     </div>
+
+    <!-- Install Vue.js -->
     <script src="https://unpkg.com/vue"></script>
+
+    <!-- Install Axios for HTTP requests -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
         new Vue({
             el: '#example',
-            data: { hello: 'Hello There World!' }
+            data: {
+                hello: 'Hello Again World!',
+            },
+            methods: {
+                sayHi(){
+                    alert("Hi!");
+                },
+            }
         })
     </script>
   </body>
