@@ -1,1 +1,14 @@
-<pre>Welcome to IX Montreal McHacks! Test Commit</pre>
+<html>
+  <body>
+    <div id="example">
+      <p>{{ hello }}</p>
+    </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+        new Vue({
+            el: '#example',
+            data: { hello: 'Hello World!' }
+        })
+    </script>
+  </body>
+</html>
