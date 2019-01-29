@@ -1,10 +1,12 @@
 <html>
   <body>
     <div id="example">
-      <p>{{ hello }}</p>
+      <p class="title">{{ hello }}</p>
     </div>
     <script src="https://unpkg.com/vue"></script>
     <script>
+        import './ix_front_end.css';
+
         new Vue({
             el: '#example',
             data: { hello: 'Hello World!' }
