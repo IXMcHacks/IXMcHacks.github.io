@@ -17,8 +17,10 @@
           <!-- CONTAINER FOR FORM -->
           <div class="formContainer">
             <div class="formItem" v-for="item in questions" :key="item.tag">
-              <div class="formItemTitle">
-                {{item.title}}
+              <div class="formItemTitleHolder">
+                <div class="formItemTitle">
+                  {{item.title}}
+                </div>
               </div>
               <div v-if="item.type == 'radio'" class="radioButtonInputContainer" :style="returnRadioGridStyle(item.options.length)">
                 <div v-for="option in item.options" :key="option">
@@ -62,6 +64,7 @@
                 </div>
                 <div :style="getAdDimensions()">
                   <div class="noImageYet" v-if="imageSrc === ''">
+                    <span></span>
                   </div>
                   <div class="imageFixed" v-else>
                     <img :src="imageSrc" class="adToDisplay">
@@ -101,10 +104,18 @@ export default {
 
       // Ad Display
       imageSrc: '',
+      displayTall:{
+        width: 200,
+        height: 340,
+      },
+      displayWide:{
+        width: 400,
+        height: 200,
+      },
       displayDimensions: {
-        width: 250,
-        height: 400,
-        panelHeight: 45,
+        width: 0,
+        height: 0,
+        panelHeight: 36,
       },
 
       // Form Questions
@@ -213,6 +224,9 @@ export default {
       ],
     }
   },
+  created(){
+    this.makeAdTall();
+  },
   methods: {
 
 		// Display Dimensions
@@ -224,12 +238,12 @@ export default {
 			return returnString + ";";
 		},
 		makeAdTall(){
-			this.displayDimensions.width = 250;
-			this.displayDimensions.height = 400;
+			this.displayDimensions.width = this.displayTall.width;
+			this.displayDimensions.height = this.displayTall.height;
 		},
 		makeAdWide(){
-			this.displayDimensions.width = 500;
-			this.displayDimensions.height = 250;
+			this.displayDimensions.width = this.displayWide.width;
+			this.displayDimensions.height = this.displayWide.height;
 		},
 		getAdContainerDimensions(){
 			let widthString = 'width: ' + this.displayDimensions.width + 'px;';
@@ -242,7 +256,7 @@ export default {
 			return 'height: ' + this.displayDimensions.panelHeight + 'px;';
 		},
 		getAdDimensions(){
-			let height = this.displayDimensions.height - this.displayDimensions.panelHeight;
+			let height = this.displayDimensions.height - (2 * this.displayDimensions.panelHeight);
 			return 'width: 100%; height: ' + height + 'px;';
 		},
 

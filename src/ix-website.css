@@ -10,13 +10,14 @@ html {
 
 .appContainer{
 	position: absolute;
-  margin: auto;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 1200px;
+	margin: 10px auto 10px auto;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 1000px;
 	height: fit-content;
+	padding: 40px;
 }
 
 .titleContainer{
@@ -47,7 +48,7 @@ html {
 	background-color: blue;
 	opacity: 0.5;
 	border-radius: 10px;
-	font-size: 12px;
+	font-size: 10px;
 	padding: 45px;
 }
 
@@ -59,8 +60,15 @@ html {
 	color: white;
 }
 
+.formItemTitleHolder{
+	display: table;
+	height: 50px;
+	padding-right: 15px;
+}
+
 .formItemTitle{
-	line-height: 50px;
+	display:table-cell;
+	vertical-align: middle;
 }
 
 .radioButtonInputContainer{
@@ -157,16 +165,15 @@ html {
 }
 
 .adDisplayHolder{
-		display: table-cell;
-		text-align: center;
-		vertical-align: middle;
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
 }
 
 .adDisplay{
-		margin: auto;
-		border: solid white 4px;
-		border-radius: 10px;
-		display: table;
+	margin: auto;
+	border: solid white 4px;
+	border-radius: 10px;
 }
 
 .noImageYet{
@@ -189,8 +196,6 @@ html {
 
 .adPanel{
 	width: 100%;
-	display: table-row;
-	line-height: 45px;
 	background-color: white;
 	color: #5277ce;
 }
@@ -198,7 +203,8 @@ html {
 #borderHeader{
 	border-top-right-radius: 5px;
 	border-top-left-radius: 5px;
-	font-size: 13px;
+	font-size: 1px;
+	line-height: 36px;
 }
 
 .ipAddressInput{
@@ -210,13 +216,16 @@ html {
 }
 
 #borderFooter{
+	border-bottom: solid white 2px;
 	border-bottom-right-radius: 5px;
 	border-bottom-left-radius: 5px;
 	font-size: 11px;
+	line-height: 36px;
 }
 
 #borderFooter:hover{
 	background-color: #5277ce;
+	border-bottom: solid #5277ce 2px;
 	color: white;
 	cursor: pointer;
 }
